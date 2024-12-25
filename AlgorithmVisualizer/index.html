@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Algorithm Visualizer</h1>
+            <div class="controls">
+                <select id="algorithm-select">
+                    <option value="bfs">Breadth-First Search</option>
+                    <option value="dfs">Depth-First Search</option>
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                </select>
+                <div class="obstacle-controls">
+                    <label class="toggle">
+                        <input type="checkbox" id="obstacle-toggle">
+                        <span class="slider"></span>
+                        Enable Obstacles
+                    </label>
+                    <select id="obstacle-type" disabled>
+                        <option value="wall">Wall</option>
+                        <option value="weight">Weight (Cost: 5)</option>
+                    </select>
+                </div>
+                <button id="start-btn">Start</button>
+                <button id="clear-btn">Clear Grid</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="cell start"></div>
+                    <span>Start Node</span>
+                </div>
+                <div class="legend-item">
+                    <div class="cell end"></div>
+                    <span>End Node</span>
+                </div>
+                <div class="legend-item">
+                    <div class="cell wall"></div>
+                    <span>Wall</span>
+                </div>
+                <div class="legend-item">
+                    <div class="cell visited"></div>
+                    <span>Visited</span>
+                </div>
+                <div class="legend-item">
+                    <div class="cell path"></div>
+                    <span>Path</span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="grid"></div>
+        </main>
+        <div class="instructions">
+            <p>Click and drag to create walls</p>
+            <p>Drag the start (green) and end (red) nodes to reposition</p>
+        </div>
+    </div>
+    <script src="js/grid.js"></script>
+    <script src="js/data-structures/MinHeap.js"></script>
+    <script src="js/data-structures/Queue.js"></script>
+    <script src="js/algorithms/bfs.js"></script>
+    <script src="js/algorithms/dfs.js"></script>
+    <script src="js/algorithms/dijkstra.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
